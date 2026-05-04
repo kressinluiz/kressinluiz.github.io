@@ -1,5 +1,5 @@
 {
-  "name": "extraterrestrial-equinox",
+  "name": "rs",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -12,6 +12,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^6.2.1"
+    "@astrojs/mdx": "^5.0.4",
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/sitemap": "^3.7.2",
+    "astro": "^6.2.1",
+    "sharp": "^0.34.3"
   }
 }
