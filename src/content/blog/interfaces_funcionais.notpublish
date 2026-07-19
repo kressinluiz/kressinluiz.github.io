@@ -1,0 +1,108 @@
+---
+title: 'Java - Interfaces Funcionais Comuns'
+description: 'A biblioteca Java fornece várias interfaces prontas no pacote java.util.Function.'
+pubDate: 'Jul 18 2026'
+heroImage: '../../assets/blog-placeholder-3.jpg'
+---
+
+# Interfaces Funcionais Prontas
+O pacote `java.util.function` fornece diversas interfaces funcionais prontas para representar operações comuns, evitando a necessidade de criar interfaces próprias.
+
+## Function
+Representa uma função que recebe o valor de um tipo e retorna outro tipo. Usada para transformar um valor em outro.
+```
+Function<T,R>
+```
+Onde T é o tipo de entrada e R é o tipo do retorno da função.
+
+Por exemplo:
+```
+Function<String, Integer> tamanho = String::length;
+System.out.println(tamanho.apply("Java")); 
+```
+
+Essa interface possui três variações:
+- `UnaryOperator<T>`: recebe e retorna o mesmo tipo. Utilizada para modificar um valor mantendo o mesmo tipo.
+- `BinaryOperator<T>`: recebe dois parâmetros do mesmo tipo e retorna esse mesmo tipo. Utilizada para combinar dois valores do mesmo tipo em um único resultado.
+- `BiFunction<T, U, R>`: recebe dois parâmetros e retorna um resultado, podendo todos serem de tipos diferentes. Utilizada para calcular um resultado a partir de dois valores.
+
+Por exemplo:
+```
+UnaryOperator<String> maiusculo = String::toUpperCase;
+System.out.println(maiusculo.apply("java"));
+
+
+BinaryOperator<Integer> soma = Integer::sum;
+System.out.println(soma.apply(2,2));
+
+BiFunction<Integer, Integer, Integer> soma = (a, b) -> a+b;
+System.out.println(soma.apply(2,3));
+
+```
+
+## Predicate
+Essa interface representa uma condição lógica e retorna um `boolean`. Usada para testar uma condição.
+Sintaxe:
+```
+Predicate<T>
+```
+
+Por exemplo:
+```
+Predicate<Integer> par = n -> n % 2 == 0;
+System.out.println(par.test(10));
+```
+
+E também existem métodos úteis para expandir a funcionalidade de um Predicate implementado:
+```
+Predicate<Integer> positivo = n -> n > 0;
+
+Predicate<Integer> parEpositivo = par.and(positivo);
+
+Predicate<Integer> naoPar = par.negate();
+```
+
+Essa interface possui uma variação chamada `BiPredicate<T, U>` que recebe dois parâmetros e retorna um boolean. Usada para verificar uma condição envolvendo dois valores.
+Por exemplo:
+```
+BiPredicate<String, String> iguais = String::equals;
+System.out.println(iguais.test("Java", "Java"));
+```
+
+## Consumer
+Essa interface representa uma função que recebe um valor de um tipo específico para realizar algum processamento e não retorna nada. Utilizada para consumir um valor realizando uma ação (como imprimir, salvar ou enviar).
+Sintaxe:
+```
+Consumer<T>
+```
+
+Por exemplo:
+```
+Consumer<String> imprimir = System.out::println;
+imprimir.accept("Olá");
+```
+
+A interface possui uma variação chamada de `BiConsumer<T,U>` que recebe dois parâmetros. Usada para executar uma ação utilizando dois valores. 
+Por exemplo:
+```
+BiConsumer<String, Integer> pessoa = (nome, idade) -> System.out.println(nome + " " + idade);
+pessoa.accept("Luiz", 20);
+```
+
+
+## Supplier
+Essa interface representa uma função que não recebe parâmetros e produz um valor. Usada para fornecer um valor sob demanda.
+Sintaxe:
+```
+Supplier<T>
+```
+
+Por exemplo:
+```
+Supplier<Double> aleatorio = Math::random;
+System.out.println(aleatorio.get());
+```
+
+# Conclusão
+A biblioteca Java fornece implementações de diversas interfaces funcionais úteis para o desenvolvimento no dia a dia.
+Essas interfaces são amplamente utilizadas na API de Streams, em métodos como `map()`, `filter()`, `forEach()`, `reduce()`, entre outros, que serão discutidos em artigos futuros.

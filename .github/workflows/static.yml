@@ -21,6 +21,8 @@ jobs:
         uses: withastro/action@v6
         with:
           path: '.'
+        env:
+          PUBLIC_GA_ID: ${{ vars.PUBLIC_GA_ID }}
   deploy:
     needs: build
     runs-on: ubuntu-latest

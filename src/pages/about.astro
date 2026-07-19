@@ -2,10 +2,35 @@
 import Layout from "../layouts/BlogPost.astro";
 ---
 
-<Layout
-  title="About Me"
-  description="About me page"
-  pubDate={new Date("May 03 2026")}
->
-  <p>Sometime in the future, I'll write something about myself here.</p>
+<Layout title="Sobre" description="Sobre" pubDate={new Date("July 19 2026")}>
+    <p>
+        Meu nome é Luiz, desenvolvedor de software e engenheiro eletricista.
+        Tenho experiência profissional no desenvolvimento de sistemas
+        embarcados, aplicativos Android e aplicações Windows. Atualmente estou
+        me especializando no desenvolvimento backend utilizando Java como
+        linguagem principal.
+    </p>
+
+    <h2>Projetos</h2>
+    <h3>Fitness App</h3>
+    <p>
+        Estou trabalhando no desenvolvimento de um aplicativo destinado ao
+        gerenciamento de exercícios e treinos de musculação. O objetivo é criar
+        uma plataforma capaz de auxiliar no acompanhamento e progressão da carga
+        do usuário. Os seguintes projetos estão em constante atualização e irão
+        compor o sistema de acompanhamento:
+        <ul>
+            <li>
+                <a href="https://github.com/kressinluiz/fitness-api"
+                    >Fitness API</a
+                >
+            </li>
+            <li>
+                <a
+                    href="https://github.com/kressinluiz/fitness-notification-service"
+                    >Microserviço de notificação de treinos</a
+                >
+            </li>
+        </ul>
+    </p>
 </Layout>

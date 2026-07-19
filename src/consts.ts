@@ -1,2 +1,2 @@
-export const SITE_TITLE = 'Luiz Kressin';
-export const SITE_DESCRIPTION = 'Welcome to my blog';
+export const SITE_TITLE = 'Kressin';
+export const SITE_DESCRIPTION = 'Bem vindo ao blog do Kressin';
