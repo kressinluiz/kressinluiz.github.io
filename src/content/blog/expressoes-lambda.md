@@ -94,5 +94,9 @@ Animal gatoComLambda = () -> System.out.println("Andando...");
 gatoComLambda.andar();
 ```
 
+Vale lembrar que a anotaçao `@FunctionalInterface` não é obrigatória, mas serve para validar a interface na compilação. O compilador irá lançar um erro caso a interface tiver mais de um método abstrato, por exemplo.
+
 # Conclusão
-As interfaces funcionais são um tipo especial de interface que podem conter diversos métodos, desde que apenas um deles seja abstrato. As expressões lambda fornecem uma forma mais simples e menos verbosa de implementar essas interfaces, tornando o código mais legível, conciso e expressivo.
+As expressões lambda fornecem uma forma mais simples e menos verbosa de implementar interfaces funcionais, tornando o código mais legível, conciso e expressivo.
+As interfaces funcionais são um tipo especial de interface que podem conter diversos métodos, desde que apenas um deles seja abstrato. 
+Na prática raramente é preciso criar interfaces funcionais porque o Java possui interfaces funcionais prontas na biblioteca `java.util.function` que tratam dos casos mais comuns. Esse será o assunto do próximo artigo.
