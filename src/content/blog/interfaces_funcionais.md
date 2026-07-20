@@ -1,7 +1,7 @@
 ---
 title: 'Java - Interfaces Funcionais Comuns'
 description: 'A biblioteca Java fornece várias interfaces prontas no pacote java.util.Function.'
-pubDate: 'Jul 18 2026'
+pubDate: 'Jul 19 2026'
 heroImage: '../../assets/blog-placeholder-3.jpg'
 ---
 

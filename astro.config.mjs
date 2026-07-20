@@ -2,15 +2,10 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
 
-import partytown from '@astrojs/partytown';
 
 export default defineConfig({
     site: 'https://kressinluiz.github.io/',
-    integrations: [mdx(), sitemap(), partytown({
-        config: {
-            forward: ["dataLayer.push"],
-        },
-    })],
+    integrations: [mdx(), sitemap()],
     fonts: [
         {
             provider: fontProviders.local(),

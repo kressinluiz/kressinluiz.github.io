@@ -11,5 +11,7 @@ const gaId = import.meta.env.PUBLIC_GA_ID;
         dataLayer.push(arguments);
     }
     gtag("js", new Date());
-    gtag("config", gaId);
+    gtag("config", gaId, {
+        cookie_domain: "auto",
+    });
 </script>
